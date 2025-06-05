@@ -13,7 +13,7 @@ The goals of this live code are to:
 
 ## Flasky Back End
 
-The features described in each wave of this live code are intended to work with the Flasky back-end created during C16. Your instructors will be using a version of the Flasky back end specific to your cohort. While the underlying structure will follow the same general pattern, some of the specific features or model names may differ.
+The features described in each wave of this live code are intended to work with the Flasky back-end created during C16. Your instructors will be using a version of the Flasky back end specific to your cohort. The underlying structure will follow the same pattern that we see in the directions, but some of the specific features or model names for your cohort's version may differ from what's described in the directions.
 
 To follow along, clone the cohort-specific repository of Flasky that your instructors provide. This allows you to run the same version of the back end used during the live codes on your machine.
 
