@@ -13,9 +13,11 @@ The goals of this live code are to:
 
 ## Flasky Back End
 
-The features described in each wave of this live code were designed to be used with the Flasky back-end created during C16. The source code for this Flasky can be found [here](https://github.com/adagold/flasky/tree/solution) and the deployed version can be found [here](https://ada-flasky.onrender.com).
+The features described in each wave of this live code are intended to work with the Flasky back-end created during C16. Your instructors will be using a version of the Flasky back end specific to your cohort. The underlying structure will follow the same pattern that we see in the directions, but some of the specific features or model names for your cohort's version may differ from what's described in the directions.
 
-Your instructors may use the Flasky Back End created for your cohort and your homeroom class. Thus, the exact features they implement may be different from those described below. The React skills practice will be the same regardless of the exact features your class implements. 
+To follow along, clone the cohort-specific repository of Flasky that your instructors provide. This allows you to run the same version of the back end used during the live codes on your machine.
+
+**Note: Though your cohort may use not have a(n) object/model `Dog`, the React skills you’ll be practicing remain the same regardless of the back-end details.**
 
 ## Wave 00: Components and Props
 
