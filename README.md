@@ -15,7 +15,7 @@ The goals of this live code are to:
 
 The features described in each wave of this live code are intended to work with the Flasky back-end created during C16. Your instructors will be using a version of the Flasky back end specific to your cohort. While the underlying structure will follow the same general pattern, some of the specific features or model names may differ.
 
-To follow along, clone the cohort-specific repository of Flasky that your instructors provide. This will allow you to run the same back end locally that will be used during the live code.
+To follow along, clone the cohort-specific repository of Flasky that your instructors provide. This allows you to run the same version of the back end used during the live codes on your machine.
 
 **Note: Though your cohort may use not have a(n) object/model `Dog`, the React skills you’ll be practicing remain the same regardless of the back-end details.**
 
