@@ -1,7 +1,7 @@
 const Cat = () => {
   return (
     <>
-        <li>
+        <li className='cat'>
             <h2>Name of Cat</h2>
             <p>Meow!</p>
             <button>Pet</button>
