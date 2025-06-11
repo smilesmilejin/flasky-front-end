@@ -1,13 +1,25 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Cat = ({ name, color, personality, caretaker }) => {
+	const [petCount, setPetCount] = useState(0);
+
+	const increasePets = () => {
+		setPetCount(prevPetCount => prevPetCount + 1);
+	};
+
+	const handlePetCat = () => {
+		increasePets();
+	};
+
   return (
       <li className='cat'>
           <h2>Name: {name}</h2>
           <h2>Color: {color}</h2>
           <h2>Personality: {personality}</h2>
           <h2>Caretaker: {caretaker}</h2>
-          <button>Pet</button>
+					<h2># of Pets {petCount}</h2>
+          <button onClick={event => handlePetCat()}>Pet</button>
       </li>
   );
 };
