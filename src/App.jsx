@@ -4,8 +4,21 @@ import './App.css';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 // import { useEffect } from 'react';
+import NewCatForm from './components/NewCatForm.jsx';
 
 const kBaseUrl = 'http://127.0.0.1:5000';
+
+const postCatApi = (newCatData) => {
+  return axios.post(`${kBaseUrl}/cats`, newCatData)
+   .then(response => {
+      console.log(response.data);
+      return convertFromApi(response.data);
+   })
+    .catch (error => {
+      console.log(error);
+    });
+};
+
 
 const getAllCatsApi = () => {
   return axios.get(`${kBaseUrl}/cats`)
@@ -134,11 +147,23 @@ function App() {
       }));
     });
   };
+
+  const postCat = (newCatData) => {
+    postCatApi(newCatData)
+    .then(newCat => {
+      setCatData(prevCats => [newCat, ...prevCats]) // the state only change when reference changes, use spread operate to createa  copy, ad add newCat
+    });
+  };
+
+
   return (
-    <>
+    <div className='container'>
     <h2>Total number of Pets across all cats: {totalPets}</h2>
       <CatList catData={catData} onPetCat={petCat} onUnregisterCat = {removeCat}/>
-    </>
+      <NewCatForm
+        onPostCat={postCat}
+      />
+    </div>
   );
 }
 
