@@ -1,9 +1,20 @@
 import axios from 'axios';
 import CatList from './components/CatList.jsx';
+import NewCatForm from './components/NewCatForm.jsx';
 import './App.css';
 import { useState, useEffect } from 'react';
 
 const kBaseUrl = 'http://localhost:5000';
+
+const postCatApi = (newCatData) => {
+  return axios.post(`${kBaseUrl}/cats`, newCatData)
+    .then( response => {
+      return convertFromApi(response.data);
+    })
+    .catch( error => {
+      console.log(error);
+    });
+};
 
 const getAllCatsApi = () => {
   return axios.get(`${kBaseUrl}/cats`)
@@ -103,15 +114,25 @@ function App() {
     });
   };
 
+  const postCat = (newCatData) => {
+    postCatApi(newCatData)
+      .then( newCat => {
+        setCatData(prevCats => [newCat, ...prevCats]);
+      });
+  };
+
   return (
-    <>
+    <div className='container'>
       <h2>Total number of Pets across all cats: {totalPets}</h2>
       <CatList
         catData={catData}
         onPetCat={petCat} 
         onUnregisterCat={removeCat}
         />
-    </>
+      <NewCatForm 
+        onPostCat={postCat}
+        />
+    </div>
   );
 }
 
